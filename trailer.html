@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video with Title and Content</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: url('./assets/evil-dead-bg.jpg') no-repeat center center fixed;
+            background-size: cover;      
+        }
+
+        .container {
+            display: flex; /* Use flexbox layout */
+            width: 80%; /* Container width */
+            max-width: 1200px; /* Maximum width */
+            margin: auto; /* Center the container */
+            margin-left: 70px;
+        }
+
+        .content {
+            margin-right: 800px;
+            text-align: left 50px; /* Align text to the left */
+            z-index: 10; /* Above background */
+            color: white; /* Text color */
+            margin-right: 20px; /* Space between content and video */
+            flex: 1; /* Take available space */
+        }
+
+        .video-container {
+            position: relative;
+            z-index: 10; /* Ensures video is above the background */
+            flex: 1; /* Take available space */
+            display: flex; /* Ensure it aligns correctly */
+            justify-content: flex-end; /* Align video to the right */
+        }
+
+        video {
+            margin-left: 800px;
+            width: 400%; /* Full width of the video container */
+            max-width: 800px; /* Maximum width for the video */
+            height: 100%; /* Maintain aspect ratio */
+            border: 5px solid white; /* Optional border for aesthetics */
+            
+        }
+
+        img {
+            
+            max-width: 300px; /* Adjust the maximum width of the title image */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 10px; /* Space below the title image */
+        }
+
+        /* Optional: Style for mobile responsiveness */
+        @media (max-width: 600px) {
+            video {
+                width: 100%; /* Full width on small screens */
+            }
+            .container {
+                flex-direction: column; /* Stack elements on smaller screens */
+                align-items: center; /* Center items */
+            }
+            .content {
+                margin-left: 60px;
+                text-align: center; /* Center text on small screens */
+                margin-right: 0; /* Remove right margin */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <img src="./assets/movies title/evil-title.png" alt="Title">
+             Spanish: La Casa de Papel, lit.'The House of Paper' is a Spanish heist 
+                crime drama media franchise created by Álex Pina. It is centered around a television series 
+                which followed two long-prepared heists led by the Professor. The narrative of the series is told in a 
+                real-time-like fashion, relying on
+        </div>
+        
+        <div class="video-container">
+            <video controls autoplay muted>
+                <source src="./dead.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</body>
+</html>
