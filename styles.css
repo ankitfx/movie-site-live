@@ -1,0 +1,505 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary: #ff0000;  
+}
+
+body {
+    background: #000000;
+    font-family: 'poppins', sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+    z-index: 10;
+}
+ 
+ 
+
+.logo {
+    font-size: 40px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-weight: 800;
+    margin-right: 50px;
+}
+
+.nav {
+    display: flex;
+   
+}
+
+.nav li {
+    list-style: none;
+    margin: 0 10px;    
+}
+
+
+.nav li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav li:hover a{
+    color: var(--primary);
+}
+
+.auth {
+    margin-left: 300px;
+    margin-right: 20px; /* Adjust space between login and search */
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #e60000; /* Darken on hover */
+}
+
+
+.search {
+    display: flex;
+    position: relative;
+    width: 300px;
+    height: 40px;   
+}
+
+.search input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    background-color: transparent;
+    border: 1 solid rgba(225, 255, 255, 0.5);
+    outline: none;
+    border-radius: 4px;
+    padding: 0 10px 0 45px !important;
+    backdrop-filter: blur(10px);   
+}
+
+
+.search input::placeholder {
+    color: #ffffff;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url('./assets/BG-login.jpg') no-repeat;
+    background-size: cover; /* Ensures the image fits within the container without cropping */
+    background-position: center center;
+    background-attachment: fixed; /* Makes sure it sticks and doesn't move with scrolling */
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+
+.banner::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    position: relative;
+    max-width: 550px;
+    display: none;
+    visibility: hidden;
+    transform: scale(0);
+    transform: 0.5s;
+}
+
+.content.active {
+    display: block;
+    visibility: visible;
+    transform: scale(1);
+    transform: 0.5s;
+}
+
+.movie-title {
+    max-width: 250px;
+}
+
+.banner .content h4 {
+    color: rgba(225, 255, 255, 0.5);
+    font-weight: 400;
+    font-size: 30px;
+}
+.banner .content h4 span {
+    padding: 0 10px;
+    border-right: 1px solid rgba(225, 255, 255, 0.5); 
+}
+
+.banner .content h4 span:first-child {
+    padding-left: 0;
+}
+
+.banner .content h4 span:last-child {
+    border-right: none;
+}
+
+
+.banner .content h4 span i {
+    background: var(--primary);
+    color: #ffffff;
+    padding: 0% 8px;
+    display: inline-block;
+    border-radius: 2px;   
+}
+
+.banner .content p {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5em;
+    color: #ffffff;
+    margin: 10px 0 20px;
+}
+
+.banner .content .button {
+    position: relative;
+}
+
+.banner .content .button a {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    background: var(--primary);
+    color: #ffffff;
+    padding: 6px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: 0.5s;
+    cursor: pointer;
+}
+
+
+.banner .content .button a:nth-child(2) {
+    background: rgba(225, 255, 255, 0.2)
+}
+
+.banner .content .button a:hover:nth-child(2) {
+   background: var(--primary);
+}
+
+
+.banner .carousel-box {
+    position: relative;
+    width: 100%; 
+    max-width: 1200px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 20px 20px 50px rgba(225, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+
+
+
+.carousel {
+    position: relative;
+    height: 560px;
+    perspective: 1500px;
+}
+
+.carousel .carousel-item {
+    
+    width: 250px;
+    cursor: pointer;
+    
+}
+
+.carousel .carousel-item img {
+
+    max-width: 235px;
+    border-radius: 20px;
+    transform: translate(8px) translateY(-40px);
+    object-fit: cover;
+    object-position: center;
+}                                    
+
+.play {
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    cursor: pointer !important;
+    transition: 0.3s;
+
+}
+
+.play i {
+    margin-right: 10px;
+    font-size: 40px;
+    cursor: pointer !important;
+
+}
+
+.play:hover {
+    color: var(--primary);
+}
+
+.sci {
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;  
+}
+
+.sci a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 25px;
+    transition: 0.3s;
+    cursor: pointer;
+}   
+
+.sci a:hover {
+    color: var(--primary);
+}
+
+.trailer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.trailer .active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.trailer video {
+ max-width: 900px;
+ outline: none;
+}
+
+.close{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    filter: invert(1);
+    max-width: 30px;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #ff0000;  
+}
+
+body {
+    background: #000000;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header Styles */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav li {
+    list-style: none;
+    margin: 0 10px;    
+}
+
+.nav li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Search and Auth */
+.auth {
+    display: flex;
+}
+
+.search {
+    display: flex;
+    width: 300px;
+}
+
+.search input {
+    width: 100%;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url('./assets/movies/wed-bg.jpg') no-repeat center center/cover;
+}
+
+/* Content */
+.content {
+    max-width: 550px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 50px;
+    }
+
+    .nav {
+        flex-direction: column;
+    }
+
+    .auth {
+        margin-top: 10px;
+    }
+
+    .search {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .banner {
+        padding: 0 20px;
+    }
+
+    .carousel-box {
+        height: 250px;
+    }
+
+    .carousel .carousel-item {
+        width: 150px;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav {
+        display: none; /* Hide on mobile */
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .banner {
+        padding: 0;
+    }
+
+    .content {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .carousel-box {
+        height: 200px;
+    }
+
+    .carousel .carousel-item {
+        width: 100px;
+    }
+}
